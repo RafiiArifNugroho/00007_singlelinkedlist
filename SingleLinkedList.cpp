@@ -114,3 +114,64 @@ public:
         }
     }
 };
+
+int main()
+{
+    LinkedList mhs;
+    int nim;
+    char ch;
+
+    do
+    {
+        cout << "\nMenu\n";
+        cout << "1. Tambah data\n";
+        cout << "2. Hapus data\n";
+        cout << "3. Tampilkan data\n";
+        cout << "4. Cari data\n";
+        cout << "5. Keluar\n";
+        cout << "Pilihan: ";
+        cin >> ch;
+
+        switch (ch)
+        {
+        case '1':
+            mhs.addNode();
+            break;
+
+        case '2':
+            if (mhs.listEmpty())
+            {
+                cout << "\nList Kosong\n";
+                break;
+            }
+            cout << "\nMasukkan NIM yang dihapus: ";
+            cin >> nim;
+
+            if (!mhs.delNode(nim))
+                cout << "Data tidak ditemukan\n";
+            else
+                cout << "Data berhasil dihapus\n";
+            break;
+
+        case '3':
+            mhs.traverse();
+            break;
+
+        case '4':
+        {
+            if (mhs.listEmpty())
+            {
+                cout << "\nList Kosong\n";
+                break;
+            }
+
+            Node *previous, *current;
+            cout << "\nMasukkan NIM yang dicari: ";
+            cin >> nim;
+
+            if (!mhs.Search(nim, &previous, &current))
+                cout << "Data tidak ditemukan\n";
+            else
+                cout << "Data ditemukan: " << current->noMhs << endl;
+            break;
+        }
