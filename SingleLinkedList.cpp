@@ -175,3 +175,15 @@ int main()
                 cout << "Data ditemukan: " << current->noMhs << endl;
             break;
         }
+
+        case '5':
+            break;
+
+        default:
+            cout << "Pilihan salah!\n";
+        }
+
+    } while (ch != '5');
+
+    return 0;
+}
