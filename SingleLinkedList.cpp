@@ -50,3 +50,9 @@ public:
             previous = current;
             current = current->next;
         }
+
+        if ((current != NULL) && (nim == current->noMhs))
+        {
+            cout << "\nDuplikasi tidak diijinkan\n";
+            return;
+        }
