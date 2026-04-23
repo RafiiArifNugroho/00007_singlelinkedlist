@@ -29,3 +29,15 @@ public:
         Node *nodeBaru = new Node;
         nodeBaru->noMhs = nim;
         nodeBaru->next = NULL;
+
+        if (START == NULL || nim <= START->noMhs)
+        {
+            if ((START != NULL) && (nim == START->noMhs))
+            {
+                cout << "\nDuplikasi tidak diijinkan\n";
+                return;
+            }
+            nodeBaru->next = START;
+            START = nodeBaru;
+            return;
+        }
